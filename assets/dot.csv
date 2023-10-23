@@ -1,0 +1,25 @@
+RequestId,EnrollmentCode,EnrollmentId,EnrolleeFirstName,EnrolleeLastName,EnrolleePhone,EnrolleeGender,EnrolleeEmail,EnrolleeAddress,FulfilmentStatus,PharmacyCode,PharmacyName,IsPharmacyPaid,HasPartnerPaid,PartnerCode,FulfilmentService,ServiceCharge,CreatedBy,AssignedTo,CreationMode,Diagnosis,Notes,InternalNotes,ProcessedDate,PreAuthorizationCode,UseSortingCenter,DateCreated,DateUpdated,PickUpDate,EnrolleeDateOfBirth,PickUpCode,PartnerName
+188776,66767-1,,ULOKO	,HELEN,2348062207452,1,,"Dangote Cement. 5th floor marble house, Falomo, Ikoyi",4,WHP11618,Primeah Pharmacy Ikoyi,true,false,WHPX10098,2,75.00,,adaora@wellahealth.com,3,..,,,2023-09-04T13:08:57.01,433789,false,2023-09-04T12:03:48.207,2023-09-04T13:36:05.947,2023-09-04T13:36:05.943,,943976,Dot HMO limited
+189141,22597,,JAAFARU,Musbahu ,2348058014745,2,,"60, Lake Chad crescent Maitama",4,WHP11697,Super Pharma Ltd - Maitama,true,false,WHPX10098,2,82.50,,sandra@wellahealth.com,3,..,,,2023-09-05T11:08:43.527,433863,false,2023-09-05T09:37:48.74,2023-09-06T08:00:39.993,2023-09-06T08:00:39.99,,311241,Dot HMO limited
+189573,433933,,OYEWOLE,ELUSAKIN,2348023763277,2,,"17 Tunde osinlaja street off salvation road opebi, Ikeja",4,WHP11574,Nett Pharmacy Opebi Branch,true,false,WHPX10098,3,652.50,,sandra@wellahealth.com,3,..,,,2023-09-06T09:57:04.35,56132,false,2023-09-06T09:21:23.073,2023-09-07T11:23:21.837,2023-09-06T13:14:03.913,,817973,Dot HMO limited
+189776,76370,,OLASUNKANMI NURUDEEN,YUSUF ,2348033216728,2,,"Union Marble House 1 Alfred Rewane Road, PMB 40032, Falomo Ikoyi, Lagos, Nigeria.",4,WHP11950,Lasucre Pharmacy Ikoyi,true,false,WHPX10098,2,187.50,,stella@wellahealth.com,3,..,,,2023-09-07T09:40:01.127,434042,false,2023-09-06T15:09:34.933,2023-09-08T15:14:49.753,2023-09-08T15:14:49.697,,744776,Dot HMO limited
+193058,48504-1,,FLORENCE,DIEKOLA ,2348147781114,1,,No 9 Oremji iloye Sango Ota by Temidire bustop.,4,WHP10433,Micoson Pharmaceuticals and stores LTD,true,false,WHPX10098,2,557.50,,adaora@wellahealth.com,3,..,,,2023-09-15T13:57:01.227,434686,false,2023-09-15T11:20:50.117,2023-09-21T07:02:50.977,2023-09-21T07:02:50.967,,587258,Dot HMO limited
+193374,22616,,MATTHEW,AMEH,2347062024895,2,,"Any pharmacy on Nysc Road, Kubwa Abuja",4,WHP11315,Shushan Pharmacy LifeCamp,true,false,WHPX10098,2,300.00,,sandra@wellahealth.com,3,"Hi Doc, Kindly find the below details for drug fulfillment:
+
+Name:
+Enrollee ID:
+
+Medications: LAMISIL 250mg daily  4/52
+
+Address:
+
+Phone:
+PA Code:",,,2023-09-17T15:07:01.307,433512,false,2023-09-16T08:44:17.6,2023-09-19T15:31:37.503,2023-09-19T15:31:37.5,,906674,Dot HMO limited
+193988,46223-1,,Adesina,Aileru,2348023676605,1,,"1 Otunba Jobi fele way (Mission House) beside regency hall, Alausa lkeja.",4,WHP11229,Chilpharm Pharmacy,true,false,WHPX10098,3,250.00,,precious@wellahealth.com,3,..,"Pls note that the exact brands should be prescribed: Nifecard XL 30mg dly x 30 days
+Inderal 40mg dly x 30 days",,2023-09-18T12:30:37.1,434928,false,2023-09-18T12:12:18.297,2023-09-21T10:41:19.813,2023-09-21T10:41:19.81,,292488,Dot HMO limited
+194502,78812-1,,Mary,Maduwuba,2347031971632,1,,"Sunlight Resources Limited 30/32 Akinwunmi Street Papa Ajao, ladipo Lagos.",4,WHP11497,Vatican Pharma Mushin,true,false,WHPX10098,2,150.00,,sandra@wellahealth.com,3,..,,,2023-09-19T16:37:45.267,434916,false,2023-09-19T15:37:01.87,2023-09-20T07:59:17.287,2023-09-20T07:59:17.283,,174402,Dot HMO limited
+195556,66629,,Anosike ,Christain,2348060805846,2,,66 Akute - Ajuwon Rd Ogun state,4,WHP10414,Odeji Pharmacy Akute,true,false,WHPX10098,3,135.00,,stella@wellahealth.com,3,..,,,2023-09-22T11:07:14.217,435281,false,2023-09-22T08:53:00.82,2023-09-22T19:31:27.23,2023-09-22T19:31:27.227,,490756,Dot HMO limited
+198027,72117-4,,ADESHEILA  ,Adefeyikemi,2347033229021,1,,"No 5 adewale ajimatanraeje , alagbaka extension, akure",4,WHP10028,Hugeworth Pharmacy,true,false,WHPX10098,2,63.75,,rashida@wellahealth.com,3,..,72117-3,,2023-09-28T21:34:50.557,435758,false,2023-09-28T16:51:49.713,2023-10-02T09:04:30.82,2023-10-02T09:04:30.813,,149827,Dot HMO limited
+189783,77041,,AHMED ,BABA,2348037874866,2,,"DANGOTE CEMENT DEPOT,CHALLAWA  KANO",6,WHP10289,Novomed Pharmacy,true,false,WHPX10098,3,630.00,,sandra@wellahealth.com,3,.. ,,,2023-09-06T15:51:07.943,433987,false,2023-09-06T15:17:12.387,2023-09-06T15:52:04.053,2023-09-06T15:52:04,,431183,Dot HMO limited
+190847,78174,,Uchechi,Diala,2348064268964,1,,"Dangote Depot off PTI road, Warri",6,WHP11425,Safari Pharmacy  Ovalaux Mall,true,false,WHPX10098,2,116.25,,stella@wellahealth.com,3,..,,,2023-09-11T11:19:49.52,434254,false,2023-09-09T11:52:13.71,2023-09-11T11:19:49.523,2023-09-11T11:19:09.9,,055347,Dot HMO limited
+197875,72117-4,,ADESHEILA   , Adedamola,2347033229021,1,,"No 5 adewale ajimatanraeje , alagbaka extension, akure",6,WHP10028,Hugeworth Pharmacy,true,false,WHPX10098,2,63.75,,sandra@wellahealth.com,3,..,,,2023-09-28T16:12:39.777,435756,false,2023-09-28T12:39:17.943,2023-09-28T16:13:56.94,2023-09-28T16:13:56.93,,791775,Dot HMO limited

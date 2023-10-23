@@ -37,8 +37,8 @@ const getExcelD = async (filename: string) => {
     let grouping: TurnAroundTime["grouping"] = "A";
     for (let i = 2; i <= sh.actualRowCount; i++) {
       const row = sh.getRow(i);
-      const createdAt = dayjs(row.getCell("C").value as string);
-      const updatedAt = dayjs(row.getCell("D").value as string);
+      const createdAt = dayjs(row.getCell("AA").value as string);
+      const updatedAt = dayjs(row.getCell("AB").value as string);
       const total_minutes = updatedAt.diff(createdAt, "minutes");
       const hr = Math.floor(total_minutes / 60);
       const min = total_minutes % 60;
