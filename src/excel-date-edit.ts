@@ -31,7 +31,7 @@ const getExcelD = async (filename: string) => {
   let datafile = path.join(__dirname, "../assets", filename);
   const turnAroundTime: TurnAroundTime[] = [];
   console.log("====================================");
-  console.log(Dir: ${datafile});
+  console.log(`Dir: ${datafile}`);
   console.log("====================================");
   await wb.csv.readFile(datafile).then(async (sh) => {
     let grouping: TurnAroundTime["grouping"] = "A";
@@ -42,7 +42,7 @@ const getExcelD = async (filename: string) => {
       const total_minutes = updatedAt.diff(createdAt, "minutes");
       const hr = Math.floor(total_minutes / 60);
       const min = total_minutes % 60;
-      const identifier = ${hr.toString()} hours, ${min.toString()} minutes;
+      const identifier = `${hr.toString()} hours, ${min.toString()} minutes`;
       const hr_to_sec = hr * 60 * 60;
       const min_to_sec = min * 60;
       const total_sec = total_minutes * 60;
@@ -93,7 +93,7 @@ const runner = async () => {
     })
   );
 
-  wb.xlsx.writeFile(path.join(__dirname, "../exports", september.xlsx));
+  wb.xlsx.writeFile(path.join(__dirname, "../exports", `september.xlsx`));
   console.log("Saved!");
 };
 
