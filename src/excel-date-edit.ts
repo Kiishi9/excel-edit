@@ -4,82 +4,97 @@ import path from "path";
 import fs from "fs";
 
 interface TurnAroundTime {
+  hr: number;
+  min: number;
+  identifier: string;
+  hr_to_sec: number;
+  min_to_sec: number;
+  total_sec: number;
+  total_minutes: number;
   grouping: "A" | "B" | "C";
-  median_total_minutes: number;
-  median_total_seconds: number;
-  count: number; // Number of items in this group
 }
 
 const columns: Partial<Column>[] = [
+  { header: "Identifier", key: "identifier", width: 30 },
+  { header: "Hour", key: "hr", width: 30 },
+  { header: "Minutes", key: "min", width: 30 },
+  { header: "Hour to Sec", key: "hr_to_sec", width: 30 },
+  { header: "Minutes to Sec", key: "min_to_sec", width: 30 },
+  { header: "Total Sec", key: "total_sec", width: 30 },
+  { header: "Total Minutes", key: "total_minutes", width: 30 },
   { header: "Grouping", key: "grouping", width: 30 },
-  { header: "Median Total Minutes", key: "median_total_minutes", width: 30 },
-  { header: "Median Total Seconds", key: "median_total_seconds", width: 30 },
-  { header: "Count", key: "count", width: 15 },
 ];
 
-// Function to calculate the median of an array of numbers
-const calculateMedian = (values: number[]): number => {
-  if (!values.length) return 0;
-  values.sort((a, b) => a - b); // Sort in ascending order
-  const mid = Math.floor(values.length / 2);
-  return values.length % 2 !== 0
-    ? values[mid] // Odd length
-    : (values[mid - 1] + values[mid]) / 2; // Even length
-};
-
-// Updated `getExcelD` function to compute median and count for each file by group
-const getExcelD = async (filename: string): Promise<TurnAroundTime[]> => {
+const getExcelD = async (filename: string) => {
   let wb: Workbook = new Workbook();
+
   let datafile = path.join(__dirname, "../assets", filename);
-  const groupData: { [key: string]: number[] } = { A: [], B: [], C: [] }; // Store total_minutes for each group
-
-  console.log(`Processing file: ${datafile}`);
-
-  await wb.csv.readFile(datafile).then((sh) => {
+  const turnAroundTime: TurnAroundTime[] = [];
+  console.log("====================================");
+  console.log(Dir: ${datafile});
+  console.log("====================================");
+  await wb.csv.readFile(datafile).then(async (sh) => {
+    let grouping: TurnAroundTime["grouping"] = "A";
     for (let i = 2; i <= sh.actualRowCount; i++) {
       const row = sh.getRow(i);
       const createdAt = dayjs(row.getCell("AA").value as string);
       const updatedAt = dayjs(row.getCell("X").value as string);
       const total_minutes = updatedAt.diff(createdAt, "minutes");
-
-      // Group data based on thresholds
-      if (total_minutes <= 120) groupData.A.push(total_minutes);
-      else if (total_minutes > 120 && total_minutes <= 240)
-        groupData.B.push(total_minutes);
-      else groupData.C.push(total_minutes);
+      const hr = Math.floor(total_minutes / 60);
+      const min = total_minutes % 60;
+      const identifier = ${hr.toString()} hours, ${min.toString()} minutes;
+      const hr_to_sec = hr * 60 * 60;
+      const min_to_sec = min * 60;
+      const total_sec = total_minutes * 60;
+      if (total_minutes <= 120) {
+        grouping = "A";
+      }
+      if (total_minutes > 120 && total_minutes <= 240) {
+        grouping = "B";
+      }
+      if (total_minutes > 240) {
+        grouping = "C";
+      }
+      turnAroundTime.push({
+        hr,
+        min,
+        identifier,
+        hr_to_sec,
+        min_to_sec,
+        total_sec,
+        total_minutes,
+        grouping,
+      });
     }
   });
-
-  // Compute median and count for each group
-  return Object.entries(groupData).map(([group, values]) => ({
-    grouping: group as TurnAroundTime["grouping"],
-    median_total_minutes: calculateMedian(values),
-    median_total_seconds: calculateMedian(values) * 60,
-    count: values.length, // Count of items in the group
-  }));
+  return turnAroundTime;
 };
 
 const runner = async () => {
   console.log("Start...");
   const files = fs.readdirSync(path.join(__dirname, "../assets"));
-  let wb: Workbook = new Workbook();
 
   const promises = files.map(async (file) => {
     const turnAroundTimes = await getExcelD(file);
-
-    // Create a worksheet for each partner (file)
-    const sh = wb.addWorksheet(file.replace(".csv", "")); // Use file name (without extension) as sheet name
-    sh.columns = columns;
-    sh.addRows(turnAroundTimes);
+    return {
+      file,
+      turnAroundTimes,
+    };
   });
 
-  await Promise.all(promises);
+  const res = await Promise.all(promises);
+  let wb: Workbook = new Workbook();
 
-  // Write the workbook with results by partner
-  await wb.xlsx.writeFile(
-    path.join(__dirname, "../exports", `partners_median_summary.xlsx`)
+  await Promise.all(
+    res.map(async ({ file, turnAroundTimes }) => {
+      const sh = wb.addWorksheet(file);
+      sh.columns = columns;
+      sh.addRows(turnAroundTimes);
+    })
   );
-  console.log("Median summary with counts saved by partner!");
+
+  wb.xlsx.writeFile(path.join(__dirname, "../exports", september.xlsx));
+  console.log("Saved!");
 };
 
 runner();
